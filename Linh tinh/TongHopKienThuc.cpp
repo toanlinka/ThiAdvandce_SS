@@ -61,6 +61,12 @@ int main() {
 	
 	string str ="45";
 	int num = stoi(str);//string to int
+	
+	//9/. Measure runtime: #include <chrono>
+	auto started = chrono::high_resolution_clock::now();
+	//------CODE HERE!----------
+	auto done = std::chrono::high_resolution_clock::now();
+	cout<<chrono::duration_cast<std::chrono::milliseconds>(done-started).count();
 
 	
 
