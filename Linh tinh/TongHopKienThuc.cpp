@@ -74,14 +74,17 @@ int main() {
 		int y;
 		int z;
 	}a;
+	queue<a> q;
 	
 	a Test;
 	cin>>Test.x;
 	cin>>Test.y;
 	cin>>Test.z;
+	q.push(a)
 	cout<<Test.x<<Test.y<<Test.z<<endl;
 	
 	a Test2{14,16,12};
+	q.push({14,16,12});
 	cout<<Test2.x<<Test2.y<<Test2.z;
 		
 
