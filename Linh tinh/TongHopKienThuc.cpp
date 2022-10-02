@@ -68,6 +68,23 @@ int main() {
 	auto done = std::chrono::high_resolution_clock::now();
 	cout<<chrono::duration_cast<std::chrono::milliseconds>(done-started).count();
 
+	//10. Struct
+	typedef struct a{
+		int x;
+		int y;
+		int z;
+	}a;
+	
+	a Test;
+	cin>>Test.x;
+	cin>>Test.y;
+	cin>>Test.z;
+	cout<<Test.x<<Test.y<<Test.z<<endl;
+	
+	a Test2{14,16,12};
+	cout<<Test2.x<<Test2.y<<Test2.z;
+		
+
 	
 
 	return 0;
