@@ -42,6 +42,25 @@ int main() {
         for (int j = i + 1; j < 5; j++) {
             v[i].push_back(j);
         }
+		
+	//Vector of Vector
+	vector<vector<int> >v;
+	cin>>n>>m;
+	for(int i=1;i<=n;i++){
+		vector<int> row;
+		for(int j=1;j<=m;j++){
+			cin>>a;
+			row.push_back(a);
+		}
+		v.push_back(row);
+	}
+	//show()
+	for(int i=0;i<v.size();i++){
+		for(int j=0;j<v[i].size();j++){
+			cout<<v[i][j]<<" ";
+		}
+		cout<<endl;
+	}
 	
 	//6. Memset
 	int Free[10];
@@ -67,6 +86,26 @@ int main() {
 	//------CODE HERE!----------
 	auto done = std::chrono::high_resolution_clock::now();
 	cout<<chrono::duration_cast<std::chrono::milliseconds>(done-started).count();
+
+	//10. Struct
+	typedef struct a{
+		int x;
+		int y;
+		int z;
+	}a;
+	queue<a> q;
+	
+	a Test;
+	cin>>Test.x;
+	cin>>Test.y;
+	cin>>Test.z;
+	q.push(Test)
+	cout<<Test.x<<Test.y<<Test.z<<endl;
+	
+	a Test2{14,16,12};
+	q.push({14,16,12});
+	cout<<Test2.x<<Test2.y<<Test2.z;
+		
 
 	
 
