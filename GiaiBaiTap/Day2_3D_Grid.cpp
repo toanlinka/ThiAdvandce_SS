@@ -1,3 +1,4 @@
+//Chua lam xong
 #include <iostream>
 #include <queue>
 #include <string>
@@ -12,7 +13,7 @@ struct{
 }myStruct;
 
 char a[31][31][31];
-queue<myStruct> q;
+queue<myStructs> q;
 
 int dx[]={1};
 int dy[]={1};
