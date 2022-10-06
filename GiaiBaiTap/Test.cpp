@@ -1,42 +1,62 @@
 #include <iostream>
-#include <vector>
 using namespace std;
-int N,K;
-int X[100];
-int used[100];
-vector <int> Arr;
 
-void show(){
-	for(int i=1;i<=N;i++){
-		cout<<X[i];
+char a[50][50];
+int b[50][50];
+int c[50][50];
+int n,m,i,j,index;
+bool flag;
+
+bool valid(int i,int j){
+	if(i>=0 && i<n && j>=0 && j<m){
+		return true;
 	}
-	cout<<endl;
+	else{
+		return false;
+	}
 }
 
-void Try(int i){
-	//Duyen cac kha nang nhan duoc
-	for(int j=0; j<N;j++){
-		if(used[j]==0){
-			X[i]=Arr[j];
-			used[j]=1;
-			
-			if(i==N){
-				show();
+void DFS(int i, int j, int x, int y){
+	int dx[]={1,-1,0,0};
+	int dy[]={0,0,1,-1};
+	
+	for(int k=0;k<4;k++){
+		int x1 = i+dx[k];
+		int y1 = j+dy[k];
+		if(valid(x1,y1) && a[i][j]==a[x1][y1]){
+			if(b[x1][y1]!=index){
+				b[x1][y1]=index;
+				DFS(x1,y1,i,j);
 			}
-			else{
-				Try(i+1);
+			else if(c[x1][y1]!=index && x1!=x && y1!=y){
+				flag = 1;
 			}
-			used[j]=0;
 		}
+	c[i][j]=index;
 	}
 }
 
 int main(){
-	cin>>N;
-	for(int i=1;i<=N;i++){  
-		int temp;
-		cin>>temp;
-		Arr.push_back(temp);
+	cin>>n>>m;
+	
+	for(int i=0;i<n;i++){
+		for(int j=0;j<m;j++){
+			cin>>a[i][j];
+		}
 	}
-	Try(1);
+	
+	for(int i=0;i<n;i++){
+		for(int j=0;j<m;j++){
+			if(flag){
+				cout<<"Yes";
+				return 0;
+			}
+			
+			b[i][j]=index=j+i*m;
+			DFS(i,j,i,j);
+		}
+	}
+	
+	cout<<"No";
+	return 0;
 }
