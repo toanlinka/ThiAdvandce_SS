@@ -81,6 +81,11 @@ int main() {
 	string str ="45";
 	int num = stoi(str);//string to int
 	
+	string test = "b5";//convert char to int
+	char k = test[1];
+	int x = (int)k -48;//x=5
+	
+	
 	//9/. Measure runtime: #include <chrono>
 	auto started = chrono::high_resolution_clock::now();
 	//------CODE HERE!----------

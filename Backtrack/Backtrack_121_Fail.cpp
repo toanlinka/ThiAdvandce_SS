@@ -33,7 +33,7 @@ void Try(int i){
 
 int main(){
 	cin>>N;
-	for(int i=1;i<=N;i++){  
+	for(int i=1;i<=N;i++){
 		int temp;
 		cin>>temp;
 		Arr.push_back(temp);
