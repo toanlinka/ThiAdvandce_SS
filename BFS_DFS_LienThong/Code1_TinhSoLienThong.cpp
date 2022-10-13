@@ -45,7 +45,7 @@ int main(){
 				BFS(i);
 			}
 		}
-		cout<<"So thanh phan lien thong: "<<slt;
+		cout<<"So thanh phan lien thong: "<<slt<<endl;
 	}
 	
 	return 0;
